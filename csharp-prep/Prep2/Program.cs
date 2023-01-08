@@ -21,7 +21,7 @@ class Program
          {
             sign= "-";
          }
-         else sign = "";
+        
         
         return sign;
         }
@@ -61,11 +61,12 @@ class Program
             letter = "F";
         }
 
+        Console.WriteLine("");
+        Console.WriteLine($"Your Letter Grade is: {letter}{sign}");
+
         if (userInput >= 70)
         {
-            Console.WriteLine("Congratulation! You passed");
-            Console.WriteLine("");
-            Console.WriteLine($"Your Letter Grade is: {letter}{sign}");
+            Console.WriteLine("Congratulation! You passed");            
         }
         else 
         {
