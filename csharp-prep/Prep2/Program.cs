@@ -21,8 +21,7 @@ class Program
          {
             sign= "-";
          }
-        
-        
+         
         return sign;
         }
     
