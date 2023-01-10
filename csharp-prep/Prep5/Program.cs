@@ -2,19 +2,19 @@ using System;
 
 class Program
 {
-    static string DisplayWelcome()
+    static void DisplayWelcome()
     {
-        return "Welcome to the Program!";
+        Console.WriteLine("Welcome to the Program!");
     }
     static string PromptUserName()
     {
-        Console.WriteLine("what is your name? ");
+        Console.Write("what is your name? ");
         string userInput = Console.ReadLine();
         return userInput;
     }
     static int PromptUserNumber()
     {
-        Console.WriteLine("what is your favorite number? ");
+        Console.Write("what is your favorite number? ");
         string userInput = Console.ReadLine();
         int favoriteNum = int.Parse(userInput);
         return favoriteNum;
