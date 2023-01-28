@@ -18,6 +18,7 @@ Methods:
     AddEntry()            : Declared in v0.1 (modified in v0.2) change: return a string
     DisplayAllEntries()   : Declared in v0.1 (modified in v0.3) pass as a parameters _loadFromFile to Entry Class
     DisplayCurrentEntry() : Declared in v0.1 (modified in v0.4) added more options to Display Entries and validations  
+    DeleteCurrentEntry()  : Declared in v0.4 added the posibility to erase an entry  
     LoadFile()            : Declared in v0.1 (modified in v0.3)
     SaveFile()            : Declared in v0.1 (modified in v0.3)
 */
