@@ -77,37 +77,37 @@ class Journal
         entry._entryList.Add($"Date: {entry._entryDate} - Prompt: {entry._entryPrompts} - {entry._entryUser}");
     }
 
-public void DisplayCurrentEntry(Entry entry) {
+    public void DisplayCurrentEntry(Entry entry) {
 
-    if (entry._entryList.Count == 0) {
+        if (entry._entryList.Count == 0) {
 
-        Console.ForegroundColor = ConsoleColor.DarkGray;        
-        Console.WriteLine($"\nEntry no found. Please enter a new entry before"+
-        "\nRemember to save the changes to a file to be able to see them in all entries");
-        Console.ForegroundColor = ConsoleColor.White;
-    }
-    else {
-            
-        foreach (string element in entry._entryList) {
+            Console.ForegroundColor = ConsoleColor.DarkGray;        
+            Console.WriteLine($"\nEntry no found. Please enter a new entry before"+
+            "\nRemember to save the changes to a file to be able to see them in all entries");
+            Console.ForegroundColor = ConsoleColor.White;
+        }
+        else {
+                
+            foreach (string element in entry._entryList) {
 
-            Console.WriteLine($"Date: {entry._entryDate} - Prompt: {entry._entryPrompts}\n{entry._entryUser}\n");
+                Console.WriteLine($"Date: {entry._entryDate} - Prompt: {entry._entryPrompts}\n{entry._entryUser}\n");
+            }
         }
     }
-}
-public void DisplayAllEntries(Entry entry) {
+    public void DisplayAllEntries(Entry entry) {
 
-    if (String.IsNullOrEmpty(_loadFromFile)) {
+        if (String.IsNullOrEmpty(_loadFromFile)) {
+            
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+            Console.WriteLine($"\nNothing to show...\nPlease load a file before");
+            Console.ForegroundColor = ConsoleColor.White;
+        }
+        else {
+
+            entry.DisplayEntry(_loadFromFile);
+        }
         
-        Console.ForegroundColor = ConsoleColor.DarkGray;
-        Console.WriteLine($"\nNothing to show...\nPlease load a file before");
-        Console.ForegroundColor = ConsoleColor.White;
     }
-    else {
-
-        entry.DisplayEntry(_loadFromFile);
-    }
-    
-}
     public void LoadFile() {
 
         
