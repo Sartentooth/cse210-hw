@@ -79,6 +79,11 @@ class Journal
 
     public void DisplayCurrentEntry(Entry entry) {
 
+        void DeleteCurrentEntry() {
+
+            entry._entryList.RemoveAt(entry._entryList.Count -1);
+        }
+
         if (entry._entryList.Count == 0) {
 
             Console.ForegroundColor = ConsoleColor.DarkGray;        
@@ -91,6 +96,13 @@ class Journal
             foreach (string element in entry._entryList) {
 
                 Console.WriteLine($"Date: {entry._entryDate} - Prompt: {entry._entryPrompts}\n{entry._entryUser}\n");
+            }
+
+            Console.Write("\nYou want to keep this entry (Y/N)?\n>> ");
+        
+            if (Console.ReadKey().Key != ConsoleKey.Y) {
+                
+                DeleteCurrentEntry();
             }
         }
     }
@@ -106,7 +118,6 @@ class Journal
 
             entry.DisplayEntry(_loadFromFile);
         }
-        
     }
     public void LoadFile() {
 

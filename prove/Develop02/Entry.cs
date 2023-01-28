@@ -44,6 +44,6 @@ class Entry
                 Console.WriteLine($"Date: {date} - Prompt: {prompt} -\n{entry}\n");
             }
         }
-    }
+    } 
 }
 
