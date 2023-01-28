@@ -16,7 +16,7 @@ Methods:
 */
 class Entry
 {
-public List<string> _entryList = new List<string>();
+    public List<string> _entryList = new List<string>();
     public string _entryUser = "";
     public string _entryPrompts = "";
     public string _entryDate = "";
