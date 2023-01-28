@@ -94,20 +94,20 @@ public void DisplayCurrentEntry(Entry entry) {
         }
     }
 }
-    public void DisplayAllEntries(Entry entry) {
+public void DisplayAllEntries(Entry entry) {
 
-        if (String.IsNullOrEmpty(_loadFromFile)) {
-            
-            Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.WriteLine($"\nNothing to show...\nPlease load a file before");
-            Console.ForegroundColor = ConsoleColor.White;
-        }
-        else {
-
-            entry.DisplayEntry(_loadFromFile);
-        }
+    if (String.IsNullOrEmpty(_loadFromFile)) {
         
+        Console.ForegroundColor = ConsoleColor.DarkGray;
+        Console.WriteLine($"\nNothing to show...\nPlease load a file before");
+        Console.ForegroundColor = ConsoleColor.White;
     }
+    else {
+
+        entry.DisplayEntry(_loadFromFile);
+    }
+    
+}
     public void LoadFile() {
 
         
