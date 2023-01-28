@@ -120,7 +120,6 @@ class Journal
         }
     }
     public void LoadFile() {
-
         
         Console.Write("Please, enter the name of the file (.txt): ");
         _loadFromFile = Console.ReadLine();
@@ -138,7 +137,6 @@ class Journal
         }
     }
     public void SaveFile(List<string> _entryList) {
-
         
         Console.Write("Please, enter the name of the file (.txt): ");
         _loadFromFile = _saveToFile = Console.ReadLine();
