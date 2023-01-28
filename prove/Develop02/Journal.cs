@@ -20,8 +20,6 @@ Methods:
     DisplayCurrentEntry() : Declared in v0.1 (modified in v0.4) added more options to Display Entries and validations  
     LoadFile()            : Declared in v0.1 (modified in v0.3)
     SaveFile()            : Declared in v0.1 (modified in v0.3)
-    
-
 */
 class Journal
 {
