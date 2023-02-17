@@ -1,9 +1,21 @@
 using System;
 
-class Program
+namespace Learning04
 {
-    static void Main(string[] args)
+        class Program
     {
-        Console.WriteLine("Hello Learning04 World!");
+        static void Main(string[] args)
+        {
+            Assignment assignment = new Assignment("Nehuen", "Historia");
+            //Console.WriteLine(assignment.GetSummary());
+
+            MathAssignment mathAssignment = new MathAssignment("Nehuen", "Fracciones", "Sumas", "Seccion 12 a 20");
+            WritingAssignment writingAssignment = new WritingAssignment("Nehuen", "Fracciones", "el libro gordo de petete");
+            string name = assignment.GetStudentName("Nehuen");
+            Console.WriteLine(mathAssignment.GetSummary());
+            Console.WriteLine(mathAssignment.GetHomeworkLIst());
+            Console.WriteLine(writingAssignment.GetSummary());
+            Console.WriteLine(writingAssignment.GetWritingAssignment(name));          
+        }
     }
 }
