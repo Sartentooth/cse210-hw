@@ -14,7 +14,7 @@ Methods:
     DisplayEntry        : Declared in 0.1 (Modified in v0.3) added validation and more functionality: now can read files
 
 */
-class Entry
+class Entry : Journal
 {
     public List<string> _entryList = new List<string>();
     public string _entryUser = "";

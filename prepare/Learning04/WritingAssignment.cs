@@ -12,7 +12,8 @@ namespace Learning04
         public WritingAssignment(string studentName, string topic, string title) : base(studentName, topic){
             _title = title;
         }
-        public string GetWritingAssignment(string studentName){
+        public string GetWritingAssignment(){
+            string studentName = GetStudentName();
             return $"Title: {_title} by {studentName}";
         }
     }

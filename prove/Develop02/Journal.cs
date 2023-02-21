@@ -24,10 +24,10 @@ Methods:
 */
 class Journal
 {
-    public RandomList _prompts = new RandomList();
-    public DateTime _dateTime = DateTime.Now;
-    public string _loadFromFile = "";
-    public string _saveToFile = "";
+    private RandomList _prompts = new RandomList();
+    private DateTime _dateTime = DateTime.Now;
+    private string _loadFromFile = "";
+    private string _saveToFile = "";
 
     public int MenuOptions(){
         // Variables for validation
