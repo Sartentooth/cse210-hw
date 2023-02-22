@@ -1,18 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-/*
-Progress Log -Class RandomList- v0.1 - Thursday 26/1/2023
-
-Members:
-    _listOfPrompt       : Declared
-    _randomPrompt       : Declared
-
-Methods:
-    SendPrompt          : Declared
-*/
 
 class Reference
 {
@@ -26,8 +12,8 @@ class Reference
     public Reference() {
         _book = "1 Nefi";
         _chapter = "1";
-        _verse = "1";
-        _textVerse = "y he aqui os dog estas cosas para que aprendais sabiduria; para que sepais que cuando os hallais al servicio de vuestros semejantes solo estais al servicio de vuestro dios";
+        _verse = "12";
+        _textVerse = "Y sucedió que mientras leía, fue lleno del Espíritu del Señor.";
     }
     public Reference(string book, string chapter, string verse, string textVerse) {
         _book = book;

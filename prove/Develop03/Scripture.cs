@@ -1,19 +1,10 @@
 using System.IO; 
 using System;
 
-/*
-Progress Log -Class RandomList- v0.1 - Thursday 26/1/2023
-
-Members:
-    _listOfPrompt       : Declared
-    _randomPrompt       : Declared
-
-Methods:
-    SendPrompt          : Declared
-*/
 class Scripture
 {
     private Reference _scriptureRef = new Reference();
+    private Word word = new Word();
     private string _levels = "";
 
     // constructors
@@ -29,10 +20,6 @@ class Scripture
         Console.ForegroundColor = ConsoleColor.White;
 
         Console.WriteLine("1. Play Game" +
-            "\n2. "+
-            "\n3. "+
-            "\n4. Load File"+
-            "\n5. Save File"+
             "\n0. Exit");
 
         while(true) {
@@ -55,40 +42,38 @@ class Scripture
         return outValue;
     }
     public string LevelSelected(){
-        Console.WriteLine("SELECT DIFFICULTY LEVEL\n\n   EASY - MEDIUM - HARD");
+        Console.WriteLine("SELECT DIFFICULTY LEVEL\n\nEASY - MEDIUM - HARD\n");
+        Console.Write(">> ");
         _levels = Console.ReadLine();
 
         string aux = "";
 
         if (_levels.ToLower() == "easy") {
+
             aux = _scriptureRef.SendScriptureRef();
-    
         }
         else if (_levels.ToLower() == "medium"){
             _scriptureRef.SetBook("2 Nefi");
             _scriptureRef.SetChapter("2");
             _scriptureRef.SetVerse("25");
+            _scriptureRef.SetTextVerse("Adán cayó para que los hombres existiesen; y existen los hombres para que tengan gozo.");
+
             aux = _scriptureRef.SendScriptureRef();
-            
         }
         else if (_levels.ToLower() == "hard") {
             _scriptureRef.SetBook("Mosiah");
             _scriptureRef.SetChapter("2");
             _scriptureRef.SetVerse("17");
+            _scriptureRef.SetTextVerse("Y he aquí, os digo estas cosas para que aprendáis sabiduría; para que sepáis que cuando os halláis al servicio de vuestros semejantes, solo estáis al servicio de vuestro Dios.");
+
             aux = _scriptureRef.SendScriptureRef();
-            
         }
         
         return aux;
     }
-    public void GetTextRendered(){
+    public List<string> GetTextRendered(){
 
-        Console.WriteLine(_scriptureRef.SendScriptureRef());
+        return _scriptureRef.SendTextRef();
         
-    }
-
-    private bool IsAllHidden(){
-                
-        return true;
     }
 }

@@ -1,38 +1,45 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-/*
-Progress Log -Class RandomList- v0.1 - Thursday 26/1/2023
-
-Members:
-    _listOfPrompt       : Declared
-    _randomPrompt       : Declared
-
-Methods:
-    SendPrompt          : Declared
-*/
 
 class Word
 {
-    private List<string> _trackWord = new List<string>();
+    private List<int> _trackWord = new List<int>();
     private Random ran = new Random();
 
-    public void DisplayWords(string scriptureRef, List<string> textVerse){
+    public void DisplayWords(string scriptureRef, List<string> textList){
 
         Console.Clear(); 
-        Console.WriteLine(string.Join(" ", textVerse));
+        Console.WriteLine($"{scriptureRef} - {string.Join(" ", textList)}");
         Console.WriteLine("\n\nPRESS ENTER TO CONTINUE OR 'TYPE' QUIT TO FINISH");
-       
+        
     }
-    public void HideWords(List<string> asd){
+    public void HideWords(string scriptureRef, List<string> textList){
+        string value;
 
-        int rn = ran.Next(0, asd.Count);
-        
-        int aux = asd[rn].Length;               
-        string str = new string('_', aux);                             
-        asd[rn] = str;
-        
+        do{ 
+            DisplayWords(scriptureRef, textList);
+            value = Console.ReadLine();
+
+            if ((value == "" || value == null) && _trackWord.Count < textList.Count) {
+
+                for (int i = 0; i < 5; i++){
+
+                    int rn = ran.Next(0, textList.Count);
+
+                    if (!_trackWord.Contains(rn)){
+
+                        _trackWord.Add(rn);
+                            
+                        int aux = textList[rn].Length;               
+                        string str = new string('_', aux);                             
+                        textList[rn] = str;
+                    }
+                }
+            }
+            else{
+                _trackWord.Clear();
+                textList.Clear();
+                break;  
+            } 
+        } while(value != "quit");
     }
 }
