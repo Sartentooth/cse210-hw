@@ -49,6 +49,10 @@ class Scripture
         string aux = "";
 
         if (_levels.ToLower() == "easy") {
+            _scriptureRef.SetBook("1 Nefi");
+            _scriptureRef.SetChapter("1");
+            _scriptureRef.SetVerse("12");
+            _scriptureRef.SetTextVerse("Y sucedió que mientras leía, fue lleno del Espíritu del Señor.");
 
             aux = _scriptureRef.SendScriptureRef();
         }
@@ -74,6 +78,5 @@ class Scripture
     public List<string> GetTextRendered(){
 
         return _scriptureRef.SendTextRef();
-        
     }
 }

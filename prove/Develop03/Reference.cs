@@ -10,16 +10,16 @@ class Reference
     private DateTime _dateTime = new DateTime();
     
     public Reference() {
+        Init();
+    }
+    public void ResetRef() {
+        Init();
+    }
+    public void Init(){
         _book = "1 Nefi";
         _chapter = "1";
         _verse = "12";
         _textVerse = "Y sucedió que mientras leía, fue lleno del Espíritu del Señor.";
-    }
-    public Reference(string book, string chapter, string verse, string textVerse) {
-        _book = book;
-        _chapter = chapter;
-        _verse = verse;
-        _textVerse = textVerse;
     }
     public string GetBook() {
         return _book;
