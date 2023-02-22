@@ -7,6 +7,6 @@ namespace Develop04
 {
     public class Relaxation
     {
-        
+        protected DateTime _dateTime = new DateTime();
     }
 }
