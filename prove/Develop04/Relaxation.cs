@@ -105,18 +105,20 @@ namespace Develop04
 
             Console.CursorVisible = false;
 
-                foreach (string ani in _animation)
-                {
-                    Console.Write(ani);
-                    Thread.Sleep(500);
-                    Console.Write("\b \b");
-                }
-            
+            foreach (string ani in _animation)
+            {
+                Console.Write(ani);
+                Thread.Sleep(500);
+                Console.Write("\b \b");
+            }
+        
             Console.CursorVisible = true;
             Console.Write("\b \b");
             Console.WriteLine();
         }
         public void ShowCountdown(int value = 2){
+
+            Console.CursorVisible = false;    
             
             for (int i = value; i >= 0; i--)
             {   
@@ -124,8 +126,9 @@ namespace Develop04
                 Thread.Sleep(1000);
                 Console.Write("\b \b");
             }
+            
+            Console.CursorVisible = true;
             Console.WriteLine();
         }
     } 
 }
-

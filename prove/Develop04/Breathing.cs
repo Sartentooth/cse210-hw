@@ -19,14 +19,14 @@ namespace Develop04
         public void ShowBreathingTask() {
 
             // showing welcome and rules message
-            ShowMsg(_welcomeBreathingMsg);
-            ShowMsg(_rulesDescriptionText);
+            base.ShowMsg(_welcomeBreathingMsg);
+            base.ShowMsg(_rulesDescriptionText);
 
             // main core of the method
             Console.Clear();
             Console.WriteLine("Get Ready...");
 
-            ShowAnimation();
+            base.ShowAnimation();
 
             BreathingTask();
             
@@ -62,7 +62,7 @@ namespace Develop04
                 Console.Write("Breath in... ");
                 ShowCountdown(increment);
 
-                increment += 2;
+                increment += 1;
 
                 Console.Write("Breath out... ");
                 ShowCountdown(increment);

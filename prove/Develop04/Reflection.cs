@@ -130,17 +130,18 @@ namespace Develop04
             Console.Clear();
             
             _startTime = DateTime.Now;
-            _futureTime = _startTime.AddSeconds(_secondAux);
+            _futureTime = _startTime.AddSeconds(_secondAux / 2);
 
             while(DateTime.Now < _futureTime){
                 Console.SetCursorPosition(0, 0);
                 Console.Write($"{prompt} ");
                 ShowAnimation();
-
+                
                 Console.SetCursorPosition(0, 1);
                 Console.Write($"{reflection} ");
                 ShowAnimation();            
             }
+            Console.WriteLine(_secondAux / 2);
         }
     }
 }
