@@ -16,10 +16,11 @@ namespace Develop05
             Console.WriteLine("Please select one of the following: ");
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("1. Create a new goal" +
-                "\n2. List Goals"+
-                "\n3. Save Goals"+
-                "\n4. Load Goals"+
-                "\n5. Record Event"+
+                "\n2. List Current Goals"+
+                "\n3. List Loaded Goals"+
+                "\n4. Save Goals"+
+                "\n5. Load Goals"+
+                "\n6. Record Event"+
                 "\n0. Exit");
 
             while(true) {

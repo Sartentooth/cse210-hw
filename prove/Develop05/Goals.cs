@@ -1,56 +1,32 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Develop05
 {
-    public abstract class Goals 
+    public abstract class Goals
     {
-        private string _userEntry;
-        private string _day;
-        private DateTime _dateTime = new DateTime();
-        private List<string> _listAux = new List<string>();
-        private List<string> _currentGoals = new List<string>();
-        private List<string> _prompts = new List<string>(){
-            "What is the name of the goal? ",
-            "Write a brief description of the goal"
-        };
+        public string FileName { get; set; }
+        public string Bracket { get; set; }
+        public string GName { get; set; }
+        public string GDescription { get; set; }
+        public string GRepetition { get; set; }
+        public int NTimesDoIt { get; set; }
 
-        public List<string> GetListOfGoals(){
-            return _currentGoals;
-        } 
-        public void SetListOfGoals(List<string> list){
-            _currentGoals = list;
-        } 
-        public void AddEntry() {
-            _day = _dateTime.ToString("dd/MM/yyyy");
-            _listAux = SendPrompt();
-
-            string sAux = "";
-
-            foreach (var line in _listAux)
-            {    
-                Console.ForegroundColor = ConsoleColor.DarkYellow;
-                Console.Write($"{line}\n>> ");
-                Console.ForegroundColor = ConsoleColor.White;
-
-                _userEntry = Console.ReadLine();
-                sAux += $"{_userEntry},";  
-            }
-            
-            _currentGoals.Add($"{_day}: [ ] {sAux}");
+        public Goals()
+        {
+            Bracket = "[ ]";
+            NTimesDoIt = 0;
         }
-        public void ShowCurrentGoalsList(){
-
-            foreach (var goal in _currentGoals)
-            {
-                Console.WriteLine("hola");
-            }
-            Console.ReadKey();
+        public Goals(string _Bracket, string _GName, string _GDescription, string _GRepetition, int _NTimesDoIt){
+            Bracket = _Bracket;
+            GName = _GName;
+            GDescription = _GDescription;
+            GRepetition = _GRepetition;
+            NTimesDoIt = _NTimesDoIt;
         }
-        public virtual List<string> SendPrompt(){
-            return _prompts; 
-        }
+        public abstract void SaveFile(string fileName, List<Goals> list);
+        public abstract void LoadFile(string fileName, List<Goals> list);
+        public abstract void EntryUser(List<string> list);
+        public abstract void RecordEvent();
     }
 }

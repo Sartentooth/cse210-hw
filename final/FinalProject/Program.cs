@@ -1,9 +1,13 @@
 using System;
 
-class Program
+namespace final
 {
-    static void Main(string[] args)
+    class Program
     {
-        Console.WriteLine("Hello FinalProject World!");
+        static void Main(string[] args)
+        {
+            Game game = new Game();
+            game.Run();
+        }
     }
 }

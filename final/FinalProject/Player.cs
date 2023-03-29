@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Develop05
+namespace final
 {
-    public interface IGoals
+    public class Player
     {
-        void SaveFile();
+        
     }
 }
